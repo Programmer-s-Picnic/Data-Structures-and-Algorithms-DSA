@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Programmer's Picnic – DSA Course Index</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, sans-serif;
+    background: #fff7e6;
+    color: #3a2a1a;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #b35a00;
+    margin-bottom: 20px;
+}
+
+.lesson-card {
+    background: #fffaf0;
+    border: 1px solid #f3c26b;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.lesson-title {
+    font-size: 1.3rem;
+    color: #a14c00;
+    margin-bottom: 8px;
+}
+
+.lesson-desc {
+    font-size: 0.95rem;
+    color: #5a3a1a;
+    margin-bottom: 12px;
+}
+
+.button {
+    display: inline-block;
+    background: #ffcc73;
+    color: #3a2a1a;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid #b57400;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.button:hover {
+    background: #ffdb9b;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>Programmer's Picnic — DSA Course</h1>
+
+<div id="lessons"></div>
+
+<div class="footer">
+    Built with love 💛 for Programmer’s Picnic • Saffron Theme 🌼
+</div>
+
+</div>
+
+<script>
+/* ---------------------------------------------------------------
+   CONFIG — CHANGE ONLY THESE TWO LINES
+------------------------------------------------------------------*/
+const GITHUB_USERNAME = "YOUR_USERNAME_HERE";
+const LESSON_REPO = "dsa-lessons";
+const VIEWER_REPO = "lesson-viewer";
+
+/* ---------------------------------------------------------------
+   LESSON DATA
+------------------------------------------------------------------*/
+const lessons = [
+    "Introduction to DSA",
+    "Time and Space Complexity",
+    "Arrays",
+    "Strings",
+    "Linked Lists",
+    "Stacks",
+    "Queues",
+    "Hashing",
+    "Trees",
+    "Binary Search Trees",
+    "Heaps and Priority Queues",
+    "Graph Basics",
+    "Searching Algorithms",
+    "Sorting Algorithms",
+    "Recursion",
+    "Backtracking",
+    "Greedy Algorithms",
+    "Dynamic Programming",
+    "Advanced Graph Algorithms",
+    "Practice Problem Sets"
+];
+
+/* ---------------------------------------------------------------
+   RENDER LESSON CARDS
+------------------------------------------------------------------*/
+const container = document.getElementById("lessons");
+
+lessons.forEach((title, index) => {
+    const id = index + 1;
+
+    const jsonURL =
+      `https://${GITHUB_USERNAME}.github.io/${LESSON_REPO}/lesson-${id}.json`;
+
+    const viewerURL =
+      `https://${GITHUB_USERNAME}.github.io/${VIEWER_REPO}/?json=${jsonURL}`;
+
+    container.innerHTML += `
+        <div class="lesson-card">
+            <div class="lesson-title">Lesson ${id}: ${title}</div>
+            <div class="lesson-desc">
+                A complete guided lesson on <strong>${title}</strong>, including
+                video script, blog article, code examples, SVG slides,
+                practice problems, and homework.
+            </div>
+            <a class="button" href="${viewerURL}" target="_blank">👉 Open Lesson</a>
+        </div>
+    `;
+});
+</script>
+
+</body>
+</html>

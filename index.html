@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Programmer's Picnic - Lesson Viewer</title>
+
+<!-- ---------- Light Saffron Theme ---------- -->
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fff7e6;
+    font-family: system-ui, "Segoe UI", sans-serif;
+    color: #3a2a1a;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+    background: #fffaf0;
+    border-radius: 16px;
+    border: 1px solid #f3c26b;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  }
+
+  h1 {
+    color: #b35a00;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    color: #a14c00;
+    margin-top: 28px;
+  }
+
+  h3 {
+    color: #8c3f00;
+    margin-top: 18px;
+  }
+
+  select {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #f3c26b;
+    border-radius: 6px;
+    background: #fff;
+  }
+
+  .lesson-section {
+    margin-top: 12px;
+    padding: 12px;
+    background: #fff3d1;
+    border-radius: 10px;
+    border: 1px solid #f1b14b;
+  }
+
+  pre {
+    background: #fff1c9;
+    padding: 12px;
+    white-space: pre-wrap;
+    border-radius: 10px;
+    border: 1px dashed #e0ac48;
+    font-size: 0.9rem;
+  }
+
+  ul {
+    margin: 6px 0 0 0;
+    padding-left: 20px;
+  }
+
+  .footer {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 0.75;
+    color: #5a3a1a;
+  }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+  <h1>Programmer's Picnic — DSA Lessons</h1>
+
+  <div>
+    <label><strong>Select Lesson:</strong></label>
+    <br />
+    <select id="lessonSelect">
+      <option>Loading...</option>
+    </select>
+  </div>
+
+  <div id="content">
+    <p style="margin-top:20px;color:#a35a00;">Loading lesson content...</p>
+  </div>
+
+  <div class="footer">Powered by lessons.json • Saffron Theme • Programmer’s Picnic</div>
+</div>
+
+<!-- ---------- JavaScript Logic ---------- -->
+<script>
+(function() {
+
+  // ----------- Parse ?json= URL parameter -----------
+  const url = new URL(window.location.href);
+  alert(url);
+  const lessonsURL = url.searchParams.get("json");
+alert(lessonsURL);
+  if (!lessonsURL) {
+    document.getElementById("content").innerHTML =
+      "<p style='color:red;'>Error: No JSON URL provided. Use ?json=URL_TO_JSON</p>";
+    return;
+  }
+
+  const selectEl = document.getElementById("lessonSelect");
+  const contentEl = document.getElementById("content");
+
+  let lessons = [];
+
+  // Escape HTML function
+  function escapeHTML(s) {
+    return (s || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+
+  function renderLesson(lesson) {
+    contentEl.innerHTML = `
+      <h2>${lesson.title}</h2>
+
+      <div class="lesson-section">
+        <h3>Video Script</h3>
+        <pre>${escapeHTML(lesson.videoScript)}</pre>
+      </div>
+
+      <div class="lesson-section">
+        <h3>Blog Article</h3>
+        <pre>${escapeHTML(lesson.blogArticle)}</pre>
+      </div>
+
+      <div class="lesson-section">
+        <h3>Practice Problems</h3>
+        <ul>
+          ${lesson.practiceProblems.map(i => <li>${escapeHTML(i)}</li>).join("")}
+        </ul>
+      </div>
+
+      <div class="lesson-section">
+        <h3>Homework</h3>
+        <ul>
+          ${lesson.homework.map(i => <li>${escapeHTML(i)}</li>).join("")}
+        </ul>
+      </div>
+
+      <div class="lesson-section">
+        <h3>Slides Outline</h3>
+        <ul>
+          ${lesson.slidesText.map(i => <li>${escapeHTML(i)}</li>).join("")}
+        </ul>
+      </div>
+
+      <div class="lesson-section">
+        <h3>Sample Code Snippet</h3>
+        <pre>${escapeHTML((lesson.codeExamples || [""])[0])}</pre>
+      </div>
+    `;
+  }
+
+  // ----------- Fetch JSON -----------
+
+  fetch(lessonsURL)
+    .then(res => res.json())
+    .then(data => {
+      lessons = data.lessons || [];
+
+      if (!lessons.length) {
+        contentEl.innerHTML = "<p>No lessons found in JSON.</p>";
+        return;
+      }
+
+      // Populate dropdown
+      selectEl.innerHTML = lessons.map(
+        (l, i) => <option value="${l.id}">Lesson ${l.id}: ${l.title}</option>
+      ).join("");
+
+      // Default show first lesson
+      renderLesson(lessons[0]);
+
+      // When selected lesson changes
+      selectEl.addEventListener("change", () => {
+        const id = parseInt(selectEl.value);
+        const lesson = lessons.find(l => l.id === id);
+        renderLesson(lesson);
+      });
+    })
+    .catch(err => {
+      console.error(err);
+      contentEl.innerHTML =
+        <p style="color:red;">Error loading JSON: ${err}</p>;
+    });
+
+})();
+</script>
+
+</body>
+</html>
