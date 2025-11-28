@@ -1,211 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Programmer's Picnic - Lesson Viewer</title>
+    <meta charset="UTF-8">
+    <title>Programmer's Picnic – DSA Course Index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- ---------- Light Saffron Theme ---------- -->
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    background: #fff7e6;
-    font-family: system-ui, "Segoe UI", sans-serif;
-    color: #3a2a1a;
-  }
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, sans-serif;
+            background: #fff7e6;
+            color: #3a2a1a;
+        }
 
-  .container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px;
-    background: #fffaf0;
-    border-radius: 16px;
-    border: 1px solid #f3c26b;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
 
-  h1 {
-    color: #b35a00;
-    text-align: center;
-    margin-bottom: 20px;
-  }
+        h1 {
+            text-align: center;
+            color: #b35a00;
+            margin-bottom: 20px;
+        }
 
-  h2 {
-    color: #a14c00;
-    margin-top: 28px;
-  }
+        .lesson-card {
+            background: #fffaf0;
+            border: 1px solid #f3c26b;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
 
-  h3 {
-    color: #8c3f00;
-    margin-top: 18px;
-  }
+        .lesson-title {
+            font-size: 1.3rem;
+            color: #a14c00;
+            margin-bottom: 8px;
+        }
 
-  select {
-    padding: 8px;
-    font-size: 1rem;
-    border: 1px solid #f3c26b;
-    border-radius: 6px;
-    background: #fff;
-  }
+        .lesson-desc {
+            font-size: 0.95rem;
+            color: #5a3a1a;
+            margin-bottom: 12px;
+        }
 
-  .lesson-section {
-    margin-top: 12px;
-    padding: 12px;
-    background: #fff3d1;
-    border-radius: 10px;
-    border: 1px solid #f1b14b;
-  }
+        .button {
+            display: inline-block;
+            background: #ffcc73;
+            color: #3a2a1a;
+            padding: 8px 14px;
+            border-radius: 8px;
+            border: 1px solid #b57400;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
 
-  pre {
-    background: #fff1c9;
-    padding: 12px;
-    white-space: pre-wrap;
-    border-radius: 10px;
-    border: 1px dashed #e0ac48;
-    font-size: 0.9rem;
-  }
+        .button:hover {
+            background: #ffdb9b;
+        }
 
-  ul {
-    margin: 6px 0 0 0;
-    padding-left: 20px;
-  }
-
-  .footer {
-    margin-top: 25px;
-    text-align: center;
-    font-size: 0.8rem;
-    opacity: 0.75;
-    color: #5a3a1a;
-  }
-</style>
-
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+    </style>
 </head>
+
 <body>
+    <div class="container">
 
-<div class="container">
-  <h1>Programmer's Picnic — DSA Lessons</h1>
+        <h1>Programmer's Picnic — DSA Course</h1>
 
-  <div>
-    <label><strong>Select Lesson:</strong></label>
-    <br />
-    <select id="lessonSelect">
-      <option>Loading...</option>
-    </select>
-  </div>
+        <div id="lessons"></div>
 
-  <div id="content">
-    <p style="margin-top:20px;color:#a35a00;">Loading lesson content...</p>
-  </div>
+        <div class="footer">
+            Built with love 💛 for Programmer’s Picnic • Saffron Theme 🌼
+        </div>
 
-  <div class="footer">Powered by lessons.json • Saffron Theme • Programmer’s Picnic</div>
-</div>
+    </div>
 
-<!-- ---------- JavaScript Logic ---------- -->
-<script>
-(function() {
+    <script>
+        /* ---------------------------------------------------------------
+           YOUR REAL CONFIG
+        ------------------------------------------------------------------*/
 
-  // ----------- Parse ?json= URL parameter -----------
-  const url = new URL(window.location.href);
-  alert(url);
-  const lessonsURL = url.searchParams.get("json");
-alert(lessonsURL);
-  if (!lessonsURL) {
-    document.getElementById("content").innerHTML =
-      "<p style='color:red;'>Error: No JSON URL provided. Use ?json=URL_TO_JSON</p>";
-    return;
-  }
+        const JSON_BASE =
+            "https://programmer-s-picnic.github.io/Data-Structures-and-Algorithms-DSA/jsonfiles/";
 
-  const selectEl = document.getElementById("lessonSelect");
-  const contentEl = document.getElementById("content");
+        const VIEWER_BASE =
+            "https://programmer-s-picnic.github.io/Data-Structures-and-Algorithms-DSA/index.html/?json=";
 
-  let lessons = [];
+        /* ---------------------------------------------------------------
+           LESSON LIST
+        ------------------------------------------------------------------*/
+        const lessons = [
+            "Introduction to DSA",
+            "Time and Space Complexity",
+            "Arrays",
+            "Strings",
+            "Linked Lists",
+            "Stacks",
+            "Queues",
+            "Hashing",
+            "Trees",
+            "Binary Search Trees",
+            "Heaps and Priority Queues",
+            "Graph Basics",
+            "Searching Algorithms",
+            "Sorting Algorithms",
+            "Recursion",
+            "Backtracking",
+            "Greedy Algorithms",
+            "Dynamic Programming",
+            "Advanced Graph Algorithms",
+            "Practice Problem Sets"
+        ];
 
-  // Escape HTML function
-  function escapeHTML(s) {
-    return (s || "")
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;");
-  }
+        /* ---------------------------------------------------------------
+           RENDER LESSON CARDS
+        ------------------------------------------------------------------*/
+        const container = document.getElementById("lessons");
 
-  function renderLesson(lesson) {
-    contentEl.innerHTML = `
-      <h2>${lesson.title}</h2>
+        lessons.forEach((title, index) => {
+            // console.log("here");
+            const id = index + 1;
 
-      <div class="lesson-section">
-        <h3>Video Script</h3>
-        <pre>${escapeHTML(lesson.videoScript)}</pre>
-      </div>
-
-      <div class="lesson-section">
-        <h3>Blog Article</h3>
-        <pre>${escapeHTML(lesson.blogArticle)}</pre>
-      </div>
-
-      <div class="lesson-section">
-        <h3>Practice Problems</h3>
-        <ul>
-          ${lesson.practiceProblems.map(i => <li>${escapeHTML(i)}</li>).join("")}
-        </ul>
-      </div>
-
-      <div class="lesson-section">
-        <h3>Homework</h3>
-        <ul>
-          ${lesson.homework.map(i => <li>${escapeHTML(i)}</li>).join("")}
-        </ul>
-      </div>
-
-      <div class="lesson-section">
-        <h3>Slides Outline</h3>
-        <ul>
-          ${lesson.slidesText.map(i => <li>${escapeHTML(i)}</li>).join("")}
-        </ul>
-      </div>
-
-      <div class="lesson-section">
-        <h3>Sample Code Snippet</h3>
-        <pre>${escapeHTML((lesson.codeExamples || [""])[0])}</pre>
-      </div>
-    `;
-  }
-
-  // ----------- Fetch JSON -----------
-
-  fetch(lessonsURL)
-    .then(res => res.json())
-    .then(data => {
-      lessons = data.lessons || [];
-
-      if (!lessons.length) {
-        contentEl.innerHTML = "<p>No lessons found in JSON.</p>";
-        return;
-      }
-
-      // Populate dropdown
-      selectEl.innerHTML = lessons.map(
-        (l, i) => <option value="${l.id}">Lesson ${l.id}: ${l.title}</option>
-      ).join("");
-
-      // Default show first lesson
-      renderLesson(lessons[0]);
-
-      // When selected lesson changes
-      selectEl.addEventListener("change", () => {
-        const id = parseInt(selectEl.value);
-        const lesson = lessons.find(l => l.id === id);
-        renderLesson(lesson);
-      });
-    })
-    .catch(err => {
-      console.error(err);
-      contentEl.innerHTML =
-        <p style="color:red;">Error loading JSON: ${err}</p>;
-    });
-
-})();
-</script>
+            const jsonURL = `${JSON_BASE}/lesson-${id}.json`;
+            const viewerURL = `${VIEWER_BASE}${jsonURL}`;
+            console.log(viewerURL);
+            container.innerHTML += `
+                <div class="lesson-card">
+                    <div class="lesson-title">Lesson ${id}: ${title}</div>
+                    <div class="lesson-desc">
+                        A complete guided lesson on <strong>${title}</strong>, including
+                        video script, blog article, code examples, SVG slides,
+                        practice problems, and homework.
+                    </div>
+                    <a class="button" href="${viewerURL}" target="_blank">👉 Open Lesson</a>
+                </div>
+            `;
+        });
+    </script>
 
 </body>
+
 </html>
