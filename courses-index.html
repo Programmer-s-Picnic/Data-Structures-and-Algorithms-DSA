@@ -88,14 +88,17 @@
 
     <script>
         /* ---------------------------------------------------------------
-           CONFIG — CHANGE ONLY THESE TWO LINES
+           YOUR REAL CONFIG
         ------------------------------------------------------------------*/
-        const GITHUB_USERNAME = "programmer-s-picnic";
-        const LESSON_REPO = "Data-Structures-and-Algorithms-DSA";
-        const VIEWER_REPO = "lesson-viewer";
+
+        const JSON_BASE =
+            "https://programmer-s-picnic.github.io/Data-Structures-and-Algorithms-DSA/jsonfiles/";
+
+        const VIEWER_BASE =
+            "https://programmer-s-picnic.github.io/Data-Structures-and-Algorithms-DSA/courses-index.html/?json=";
 
         /* ---------------------------------------------------------------
-           LESSON DATA
+           LESSON LIST
         ------------------------------------------------------------------*/
         const lessons = [
             "Introduction to DSA",
@@ -126,25 +129,23 @@
         const container = document.getElementById("lessons");
 
         lessons.forEach((title, index) => {
+            // console.log("here");
             const id = index + 1;
 
-            const jsonURL =
-                `https://${GITHUB_USERNAME}.github.io/${LESSON_REPO}/lesson-${id}.json`;
-
-            const viewerURL =
-                `https://${GITHUB_USERNAME}.github.io/${VIEWER_REPO}/?json=${jsonURL}`;
-
+            const jsonURL = `${JSON_BASE}/lesson-${id}.json`;
+            const viewerURL = `${VIEWER_BASE}${jsonURL}`;
+            // console.log(jsonURL);
             container.innerHTML += `
-        <div class="lesson-card">
-            <div class="lesson-title">Lesson ${id}: ${title}</div>
-            <div class="lesson-desc">
-                A complete guided lesson on <strong>${title}</strong>, including
-                video script, blog article, code examples, SVG slides,
-                practice problems, and homework.
-            </div>
-            <a class="button" href="${viewerURL}" target="_blank">👉 Open Lesson</a>
-        </div>
-    `;
+                <div class="lesson-card">
+                    <div class="lesson-title">Lesson ${id}: ${title}</div>
+                    <div class="lesson-desc">
+                        A complete guided lesson on <strong>${title}</strong>, including
+                        video script, blog article, code examples, SVG slides,
+                        practice problems, and homework.
+                    </div>
+                    <a class="button" href="${viewerURL}" target="_blank">👉 Open Lesson</a>
+                </div>
+            `;
         });
     </script>
 
