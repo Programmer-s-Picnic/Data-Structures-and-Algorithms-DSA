@@ -1,26 +1,49 @@
 {
   "id": 1,
   "title": "Introduction to DSA",
-  "videoScript": "Hi, I’m Champak Roy and welcome to Programmer’s Picnic. In Lesson 1, we focus on Introduction to DSA.\n\nIn this session we will:\n• Understand the core ideas behind Introduction to DSA.\n• Look at Python code so the ideas feel concrete.\n• Discuss typical interview or exam-style questions.\n• End with practice problems and homework so you can apply what you learned.\n\nBig picture: We define data structures and algorithms, talk about why DSA matters for problem solving, interviews, and real software, and set expectations for this course.\n\nAs you watch, keep a notebook or open editor ready so you can pause and try the examples yourself. Let's begin.",
-  "codeExamples": [
-    "# Demo for Lesson 1: Introduction to DSA\ndef demo():\n    print(\"This is a simple demo placeholder for: Introduction to DSA\")\n\nif __name__ == \"__main__\":\n    demo()"
-  ],
-  "blogArticle": "## Lesson 1: Introduction to DSA\n\nIn this lesson of *Programmer’s Picnic*, we explore **Introduction to DSA**. We define data structures and algorithms, talk about why DSA matters for problem solving, interviews, and real software, and set expectations for this course.\n\n### Why this topic matters\n\nIn competitive programming, interviews, and real projects, introduction to dsa appear naturally. Being comfortable with this topic lets you:\n\n- Model problems in a clean, structured way.\n- Choose the right data structure or technique for constraints.\n- Reason about time and space complexity so you do not over-engineer or under-engineer solutions.\n\n### Core ideas\n\nWe cover the following ideas in this lesson:\n\n1. Intuition and real-life analogies where possible.\n2. Formal definitions and properties.\n3. Python representations and idiomatic code.\n4. Common pitfalls and how to avoid them.\n5. Typical patterns in interview questions.\n\nThe best way to learn is to read the code, run it, and then modify small pieces to see what changes. Treat this lesson as a starting point, not the final word.",
+  "difficulty": "easy",
+  "category": "foundations",
+  "duration": "20 min",
+  "keywords": ["intro", "definition", "why DSA", "data structures", "algorithms"],
+  "rewardXP": 15,
+  "badge": "DSA Explorer 🏁",
+
+  "videoScript": "Welcome to Programmer’s Picnic! In Lesson 1, we're starting with the fundamentals of Data Structures and Algorithms (DSA). By the end of this session, you will understand what DSA actually means, where it shows up in real life and why interviewers love it.\n\nTake notes and feel free to pause and try the code! Let’s begin.",
+
+  "blogArticle": "## Lesson 1: Introduction to DSA\n\nData Structures and Algorithms (DSA) is the cornerstone of efficient programming.\n\n### Why is DSA important?\n- Improves problem solving\n- Helps you write code that runs faster\n- Critical in exams and technical interviews\n- Better memory and performance management\n\n### Definition\n- **Data structure**: A way to store and organize data\n- **Algorithm**: A step-by-step procedure to solve a problem\n\n### Real-life example\nYour **phone contact list** is a data structure.\nSearching for a contact using **A→Z sorting** is an algorithm.\n\n### What you will learn in this course\n- Powerful structures: arrays, stacks, queues, trees, graphs\n- Algorithms like sorting, searching, DP & more\n\n✨ Practice daily = DSA mastery. Ready? 🚀",
+
   "practiceProblems": [
-    "Easy: A warm-up problem related to Introduction to DSA to check basic understanding.",
-    "Medium: A slightly more involved problem that forces you to apply the main idea of Introduction to DSA.",
-    "Hard: A challenging or interview-style problem that may combine Introduction to DSA with previous topics."
+    "List 5 applications of DSA in real life.",
+    "Define Data Structure and Algorithm with examples.",
+    "Explain why DSA improves performance."
   ],
+
   "homework": [
-    "HW1: Implement at least two variations of an example from this lesson on your own, without copy–paste, and push them to your GitHub repository.",
-    "HW2: Write a short note or blog post in your own words summarizing what you learned about Introduction to DSA.",
-    "HW3 (Optional): Pick a problem from an online judge (LeetCode / Codeforces / etc.) that uses this topic and solve it end-to-end."
+    "Write a summary: Why do companies test DSA?",
+    "Create an analogy for a real-life data structure.",
+    "Search for a LeetCode easy problem and solve it."
   ],
+
+  "quiz": [
+    {
+      "question": "What does DSA stand for?",
+      "options": ["Digital System Analysis", "Data Structures and Algorithms", "Data Storage Arrangement", "Developers Structural Approach"],
+      "correct": 1
+    },
+    {
+      "question": "Which is a data structure?",
+      "options": ["Sorting", "Stack", "Searching", "Recursion"],
+      "correct": 1
+    }
+  ],
+
+  "codingChallenge": {
+    "title": "Welcome Message",
+    "instructions": "# Task: Print the message\n# Welcome to DSA!\nprint(\"Replace this with your solution!\")",
+    "solution": "print('Welcome to DSA!')"
+  },
+
   "slidesSVG": [
-    "<svg viewBox='0 0 600 200' xmlns='http://www.w3.org/2000/svg'><rect width='600' height='200' fill='#fffaf0'/><text x='50%' y='35%' text-anchor='middle' fill='#b35a00' font-size='26' font-family='system-ui'>Introduction to DSA</text><text x='50%' y='65%' text-anchor='middle' fill='#8c3f00' font-size='15' font-family='system-ui'>Lesson 1 Overview</text></svg>",
-    "<svg viewBox='0 0 600 200' xmlns='http://www.w3.org/2000/svg'><rect width='600' height='200' fill='#fffaf0'/><text x='50%' y='35%' text-anchor='middle' fill='#b35a00' font-size='26' font-family='system-ui'>Concepts</text><text x='50%' y='65%' text-anchor='middle' fill='#8c3f00' font-size='15' font-family='system-ui'>Understanding Introduction to DSA</text></svg>",
-    "<svg viewBox='0 0 600 200' xmlns='http://www.w3.org/2000/svg'><rect width='600' height='200' fill='#fffaf0'/><text x='50%' y='35%' text-anchor='middle' fill='#b35a00' font-size='26' font-family='system-ui'>Operations</text><text x='50%' y='65%' text-anchor='middle' fill='#8c3f00' font-size='15' font-family='system-ui'>Key behaviours and complexity</text></svg>",
-    "<svg viewBox='0 0 600 200' xmlns='http://www.w3.org/2000/svg'><rect width='600' height='200' fill='#fffaf0'/><text x='50%' y='35%' text-anchor='middle' fill='#b35a00' font-size='26' font-family='system-ui'>Examples</text><text x='50%' y='65%' text-anchor='middle' fill='#8c3f00' font-size='15' font-family='system-ui'>Python code and patterns</text></svg>",
-    "<svg viewBox='0 0 600 200' xmlns='http://www.w3.org/2000/svg'><rect width='600' height='200' fill='#fffaf0'/><text x='50%' y='35%' text-anchor='middle' fill='#b35a00' font-size='26' font-family='system-ui'>Practice</text><text x='50%' y='65%' text-anchor='middle' fill='#8c3f00' font-size='15' font-family='system-ui'>Problems, tips, and next steps</text></svg>"
+    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#fffaf0'/><text x='50%' y='50%' text-anchor='middle' fill='#b35a00' font-size='25'>Introduction to DSA</text></svg>"
   ]
 }
