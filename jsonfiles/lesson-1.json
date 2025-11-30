@@ -4,46 +4,60 @@
   "difficulty": "easy",
   "category": "foundations",
   "duration": "20 min",
-  "keywords": ["intro", "definition", "why DSA", "data structures", "algorithms"],
+  "keywords": [
+    "intro",
+    "definition",
+    "why DSA",
+    "data structures",
+    "algorithms"
+  ],
   "rewardXP": 15,
   "badge": "DSA Explorer 🏁",
-
   "videoScript": "Welcome to Programmer’s Picnic! In Lesson 1, we're starting with the fundamentals of Data Structures and Algorithms (DSA). By the end of this session, you will understand what DSA actually means, where it shows up in real life and why interviewers love it.\n\nTake notes and feel free to pause and try the code! Let’s begin.",
-
-  "blogArticle": "## Lesson 1: Introduction to DSA\n\nData Structures and Algorithms (DSA) is the cornerstone of efficient programming.\n\n### Why is DSA important?\n- Improves problem solving\n- Helps you write code that runs faster\n- Critical in exams and technical interviews\n- Better memory and performance management\n\n### Definition\n- **Data structure**: A way to store and organize data\n- **Algorithm**: A step-by-step procedure to solve a problem\n\n### Real-life example\nYour **phone contact list** is a data structure.\nSearching for a contact using **A→Z sorting** is an algorithm.\n\n### What you will learn in this course\n- Powerful structures: arrays, stacks, queues, trees, graphs\n- Algorithms like sorting, searching, DP & more\n\n✨ Practice daily = DSA mastery. Ready? 🚀",
-
+  "blogArticle": "## Lesson 1: Introduction to DSA\n\nData Structures and Algorithms (DSA) form the backbone of efficient programming.\n\n### Why DSA?\n- Makes your solutions faster\n- Improves memory usage\n- Helps crack interviews & competitive programming\n\n### Core Concepts\n- **Data Structure**: A way to organize data\n- **Algorithm**: A procedure to solve a problem optimally\n\n### Real-Life Example\nPhone contact list = data structure\nBinary search on sorted names = algorithm\n\nWelcome to the world of smart programming! 🚀",
   "practiceProblems": [
-    "List 5 applications of DSA in real life.",
-    "Define Data Structure and Algorithm with examples.",
-    "Explain why DSA improves performance."
+    "Explain DSA in your own words with a real-life example.",
+    "Why do companies expect candidates to know DSA?",
+    "What is the difference between a data structure and an algorithm?"
   ],
-
   "homework": [
-    "Write a summary: Why do companies test DSA?",
-    "Create an analogy for a real-life data structure.",
-    "Search for a LeetCode easy problem and solve it."
+    "Find 5 daily life examples of data structures.",
+    "Write a short note: Where do algorithms help in real applications?",
+    "Try a beginner DSA problem on LeetCode."
   ],
-
   "quiz": [
     {
       "question": "What does DSA stand for?",
-      "options": ["Digital System Analysis", "Data Structures and Algorithms", "Data Storage Arrangement", "Developers Structural Approach"],
+      "options": [
+        "Digital System Architecture",
+        "Data Structures and Algorithms",
+        "Data Saving Approach",
+        "None"
+      ],
       "correct": 1
     },
     {
-      "question": "Which is a data structure?",
-      "options": ["Sorting", "Stack", "Searching", "Recursion"],
+      "question": "Which one is a data structure?",
+      "options": [
+        "Sorting",
+        "Stack",
+        "Searching",
+        "Compiler"
+      ],
       "correct": 1
     }
   ],
-
   "codingChallenge": {
-    "title": "Welcome Message",
-    "instructions": "# Task: Print the message\n# Welcome to DSA!\nprint(\"Replace this with your solution!\")",
+    "title": "Your First Print Program",
+    "instructions": "# Task: Print the text below\n# Welcome to DSA!\nprint(\"Write your code here...\")",
     "solution": "print('Welcome to DSA!')"
   },
-
   "slidesSVG": [
-    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#fffaf0'/><text x='50%' y='50%' text-anchor='middle' fill='#b35a00' font-size='25'>Introduction to DSA</text></svg>"
+    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#ffd88c'/><text x='50%' y='50%' text-anchor='middle' fill='#3a2a1a' font-size='28' font-family='system-ui'>Introduction to DSA 📘</text></svg>",
+    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#fff8e6'/><text x='50%' y='50%' text-anchor='middle' fill='#b35a00' font-size='22' font-family='system-ui'>Data Structures + Algorithms = 🚀 Performance</text></svg>",
+    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#fcefd1'/><text x='50%' y='50%' text-anchor='middle' fill='#8c3f00' font-size='20' font-family='system-ui'>Welcome to Programmer’s Picnic! 🌼</text></svg>"
+  ],
+  "codeExamples": [
+    "# Demo for Lesson 1: Introduction to DSA\nprint('DSA makes us efficient!')"
   ]
 }
