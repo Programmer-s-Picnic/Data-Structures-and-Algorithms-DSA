@@ -1,26 +1,66 @@
 {
   "id": 3,
   "title": "Arrays",
-  "videoScript": "Hi, I’m Champak Roy and welcome to Programmer’s Picnic. In Lesson 3, we focus on Arrays.\n\nIn this session we will:\n• Understand the core ideas behind Arrays.\n• Look at Python code so the ideas feel concrete.\n• Discuss typical interview or exam-style questions.\n• End with practice problems and homework so you can apply what you learned.\n\nBig picture: We discuss arrays as contiguous memory blocks, Python lists as dynamic arrays, and typical array-based interview patterns.\n\nAs you watch, keep a notebook or open editor ready so you can pause and try the examples yourself. Let's begin.",
-  "codeExamples": [
-    "# Demo for Lesson 3: Arrays\ndef demo():\n    print(\"This is a simple demo placeholder for: Arrays\")\n\nif __name__ == \"__main__\":\n    demo()"
-  ],
-  "blogArticle": "## Lesson 3: Arrays\n\nIn this lesson of *Programmer’s Picnic*, we explore **Arrays**. We discuss arrays as contiguous memory blocks, Python lists as dynamic arrays, and typical array-based interview patterns.\n\n### Why this topic matters\n\nIn competitive programming, interviews, and real projects, arrays appear naturally. Being comfortable with this topic lets you:\n\n- Model problems in a clean, structured way.\n- Choose the right data structure or technique for constraints.\n- Reason about time and space complexity so you do not over-engineer or under-engineer solutions.\n\n### Core ideas\n\nWe cover the following ideas in this lesson:\n\n1. Intuition and real-life analogies where possible.\n2. Formal definitions and properties.\n3. Python representations and idiomatic code.\n4. Common pitfalls and how to avoid them.\n5. Typical patterns in interview questions.\n\nThe best way to learn is to read the code, run it, and then modify small pieces to see what changes. Treat this lesson as a starting point, not the final word.",
+  "difficulty": "easy",
+  "category": "linear",
+  "duration": "25 min",
+  "rewardXP": 20,
+  "badge": "Array Apprentice 🔢",
+
+  "keywords": ["arrays", "indexing", "iteration", "python arrays", "lists"],
+
+  "videoScript": "Welcome back to Programmer’s Picnic! Today’s lesson is all about Arrays — one of the most fundamental building blocks in Data Structures.\n\nBy the end of this video, you'll understand what arrays are, why they exist, how indexing works, and how to store and access data efficiently.\n\nLet’s begin!\n\n1. What is an Array?\nAn array is a collection of elements stored in a **contiguous block of memory**.\n\n2. Why Arrays?\nFast access using indexing — O(1) time.\n\n3. Real-life Analogy:\nThink of an array like a row of identical boxes placed side-by-side. Each box has an address (index), and you can quickly jump to any box.\n\n4. Python Reminder:\nIn Python, arrays are implemented as **lists**, which are more flexible than low-level arrays.\n\nLet’s explore arrays in action!",
+
+  "blogArticle": "## Lesson 3: Arrays\n\nArrays are one of the simplest and most widely used data structures.\nThey allow us to store multiple values under a single name and access them using their position (index).\n\n---\n### 🔹 What is an Array?\nAn **array** is a collection of items stored at **contiguous memory locations**.\n- Fast access → O(1)\n- Fixed-size in low-level languages\n- Python lists behave like dynamic arrays\n\n---\n### 🔹 How Indexing Works\nIndexes start at **0**.\n\nExample:\n```\narr = [10, 20, 30, 40]\nprint(arr[2])  # Output: 30\n```\n\n---\n### 🔹 Array Traversal\nVisit every element one-by-one:\n```\nfor x in arr:\n    print(x)\n```\nTime complexity: **O(n)**\n\n---\n### 🔹 Applications of Arrays\n- Storing sequences (marks, prices, temperatures)\n- Implementing higher-level DS (stacks, queues, heaps)\n- Efficient mathematical & statistical computing\n\nArrays are the gateway to linear data structures. Master them well! 🚀",
+
   "practiceProblems": [
-    "Easy: A warm-up problem related to Arrays to check basic understanding.",
-    "Medium: A slightly more involved problem that forces you to apply the main idea of Arrays.",
-    "Hard: A challenging or interview-style problem that may combine Arrays with previous topics."
+    "Explain arrays in your own words with a real-life analogy.",
+    "What is the time complexity of accessing an element by index?",
+    "Write Python code to print the maximum element in an array."
   ],
+
   "homework": [
-    "HW1: Implement at least two variations of an example from this lesson on your own, without copy–paste, and push them to your GitHub repository.",
-    "HW2: Write a short note or blog post in your own words summarizing what you learned about Arrays.",
-    "HW3 (Optional): Pick a problem from an online judge (LeetCode / Codeforces / etc.) that uses this topic and solve it end-to-end."
+    "Create an array of 10 numbers and print only the even ones.",
+    "Reverse an array *without* using built-in functions.",
+    "Count how many times a given number appears in an array."
   ],
+
+  "quiz": [
+    {
+      "question": "What is the time complexity of accessing arr[i] in an array?",
+      "options": ["O(n)", "O(log n)", "O(1)", "O(n log n)"],
+      "correct": 2
+    },
+    {
+      "question": "What is the first index of an array?",
+      "options": ["0", "1", "-1", "Depends on language"],
+      "correct": 0
+    },
+    {
+      "question": "Which of the following is TRUE?",
+      "options": [
+        "Arrays store elements in random memory locations",
+        "Array traversal takes O(1) time",
+        "Arrays allow O(1) access using index",
+        "Python does not support array-like structures"
+      ],
+      "correct": 2
+    }
+  ],
+
+  "codingChallenge": {
+    "title": "Find the Sum of an Array",
+    "instructions": "# Given an array arr, print the sum of all its elements.\narr = [5, 10, 15, 20]\n# Write your code below:",
+    "solution": "arr = [5, 10, 15, 20]\nprint(sum(arr))"
+  },
+
   "slidesSVG": [
-    "<svg viewBox='0 0 600 200' xmlns='http://www.w3.org/2000/svg'><rect width='600' height='200' fill='#fffaf0'/><text x='50%' y='35%' text-anchor='middle' fill='#b35a00' font-size='26' font-family='system-ui'>Arrays</text><text x='50%' y='65%' text-anchor='middle' fill='#8c3f00' font-size='15' font-family='system-ui'>Lesson 3 Overview</text></svg>",
-    "<svg viewBox='0 0 600 200' xmlns='http://www.w3.org/2000/svg'><rect width='600' height='200' fill='#fffaf0'/><text x='50%' y='35%' text-anchor='middle' fill='#b35a00' font-size='26' font-family='system-ui'>Concepts</text><text x='50%' y='65%' text-anchor='middle' fill='#8c3f00' font-size='15' font-family='system-ui'>Understanding Arrays</text></svg>",
-    "<svg viewBox='0 0 600 200' xmlns='http://www.w3.org/2000/svg'><rect width='600' height='200' fill='#fffaf0'/><text x='50%' y='35%' text-anchor='middle' fill='#b35a00' font-size='26' font-family='system-ui'>Operations</text><text x='50%' y='65%' text-anchor='middle' fill='#8c3f00' font-size='15' font-family='system-ui'>Key behaviours and complexity</text></svg>",
-    "<svg viewBox='0 0 600 200' xmlns='http://www.w3.org/2000/svg'><rect width='600' height='200' fill='#fffaf0'/><text x='50%' y='35%' text-anchor='middle' fill='#b35a00' font-size='26' font-family='system-ui'>Examples</text><text x='50%' y='65%' text-anchor='middle' fill='#8c3f00' font-size='15' font-family='system-ui'>Python code and patterns</text></svg>",
-    "<svg viewBox='0 0 600 200' xmlns='http://www.w3.org/2000/svg'><rect width='600' height='200' fill='#fffaf0'/><text x='50%' y='35%' text-anchor='middle' fill='#b35a00' font-size='26' font-family='system-ui'>Practice</text><text x='50%' y='65%' text-anchor='middle' fill='#8c3f00' font-size='15' font-family='system-ui'>Problems, tips, and next steps</text></svg>"
+    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#ffe7b3'/><text x='50%' y='50%' text-anchor='middle' fill='#8c3f00' font-size='28' font-family='system-ui'>Arrays — Linear Data Structure 🔢</text></svg>",
+    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#fff3d1'/><text x='50%' y='45%' text-anchor='middle' fill='#a14c00' font-size='22'>Contiguous Memory • Fast Indexing (O(1))</text></svg>",
+    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#ffefc8'/><text x='50%' y='50%' text-anchor='middle' fill='#b35a00' font-size='20'>Python Lists = Dynamic Arrays 🚀</text></svg>"
+  ],
+
+  "codeExamples": [
+    "# Example 1: Creating an array\narr = [10, 20, 30, 40]\nprint(arr)\n\n# Example 2: Access element\nprint(arr[1])  # Output: 20\n\n# Example 3: Traversal\nfor x in arr:\n    print(x)"
   ]
 }
