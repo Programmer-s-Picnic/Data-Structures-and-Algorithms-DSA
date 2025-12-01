@@ -28,18 +28,20 @@
     "Search for a target element in an array and print its index (or -1)."
   ],
   "quiz": [
-    {
+
+
+ {
       "question": "Which statement is TRUE about arrays?",
       "options": [
-        "They store elements randomly",
+        "They store elements randomly in memory",
         "They use contiguous memory",
         "Indexing is always 1-based",
-        "Insertion is O(1)"
+        "Insertion is O(1) always"
       ],
       "correct": 1
     },
     {
-      "question": "Accessing arr[i] is:",
+      "question": "Accessing arr[i] is generally:",
       "options": [
         "O(n)",
         "O(log n)",
@@ -47,7 +49,89 @@
         "O(n log n)"
       ],
       "correct": 2
+    },
+    {
+      "question": "Which language stores arrays as fixed-size and homogeneous?",
+      "options": [
+        "Python",
+        "JavaScript",
+        "C",
+        "Ruby"
+      ],
+      "correct": 2
+    },
+    {
+      "question": "What is the index of the first element in most languages?",
+      "options": [
+        "0",
+        "1",
+        "-1",
+        "Depends on array length"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Insertion in the middle of an array is:",
+      "options": [
+        "Cheap",
+        "O(1)",
+        "Expensive because elements must shift",
+        "Not allowed in any language"
+      ],
+      "correct": 2
+    },
+    {
+      "question": "Which is an example of a 2D array?",
+      "options": [
+        "[1,2,3]",
+        "[[1,2],[3,4]]",
+        "1 -> 2 -> 3",
+        "[1, [2,3,4]]"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Traversal of an array is:",
+      "options": [
+        "O(n)",
+        "O(1)",
+        "O(log n)",
+        "Undefined"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Arrays are useful because:",
+      "options": [
+        "They allow fast indexing",
+        "They resize automatically in C",
+        "They store elements in non-contiguous memory",
+        "They cannot store numbers"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Which of the following is NOT an advantage of arrays?",
+      "options": [
+        "Fast access",
+        "Predictable memory usage",
+        "Dynamic resizing in all languages",
+        "Easy traversal"
+      ],
+      "correct": 2
+    },
+    {
+      "question": "Static arrays are limited because:",
+      "options": [
+        "They are slow",
+        "They use too much memory",
+        "They have fixed size",
+        "They cannot store strings"
+      ],
+      "correct": 2
     }
+
+    
   ],
   "codingChallenge": {
     "title": "Implement Linear Search",
