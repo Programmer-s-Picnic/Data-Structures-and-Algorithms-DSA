@@ -28,9 +28,7 @@
     "Search for a target element in an array and print its index (or -1)."
   ],
   "quiz": [
-
-
- {
+    {
       "question": "Which statement is TRUE about arrays?",
       "options": [
         "They store elements randomly in memory",
@@ -38,7 +36,8 @@
         "Indexing is always 1-based",
         "Insertion is O(1) always"
       ],
-      "correct": 1
+      "correct": 1,
+      "explanation": "Arrays store elements in contiguous memory blocks, allowing fast direct indexing. They do NOT store values randomly."
     },
     {
       "question": "Accessing arr[i] is generally:",
@@ -48,7 +47,8 @@
         "O(1)",
         "O(n log n)"
       ],
-      "correct": 2
+      "correct": 2,
+      "explanation": "Array access is O(1) because the element’s address is computed directly: base + index × size."
     },
     {
       "question": "Which language stores arrays as fixed-size and homogeneous?",
@@ -58,7 +58,8 @@
         "C",
         "Ruby"
       ],
-      "correct": 2
+      "correct": 2,
+      "explanation": "In C, arrays must be declared with a fixed size and all elements must be of the same data type."
     },
     {
       "question": "What is the index of the first element in most languages?",
@@ -68,7 +69,8 @@
         "-1",
         "Depends on array length"
       ],
-      "correct": 0
+      "correct": 0,
+      "explanation": "Most programming languages (Python, C, Java, JavaScript) use zero-based indexing, so the first element is at index 0."
     },
     {
       "question": "Insertion in the middle of an array is:",
@@ -78,7 +80,8 @@
         "Expensive because elements must shift",
         "Not allowed in any language"
       ],
-      "correct": 2
+      "correct": 2,
+      "explanation": "Inserting in the middle requires shifting all elements after the insertion point → O(n) time, which is expensive."
     },
     {
       "question": "Which is an example of a 2D array?",
@@ -88,7 +91,8 @@
         "1 -> 2 -> 3",
         "[1, [2,3,4]]"
       ],
-      "correct": 1
+      "correct": 1,
+      "explanation": "A 2D array is an array of arrays—like rows and columns. [[1,2],[3,4]] forms a 2 × 2 matrix."
     },
     {
       "question": "Traversal of an array is:",
@@ -98,7 +102,8 @@
         "O(log n)",
         "Undefined"
       ],
-      "correct": 0
+      "correct": 0,
+      "explanation": "Traversal means visiting every element once, which requires linear time: O(n)."
     },
     {
       "question": "Arrays are useful because:",
@@ -108,7 +113,8 @@
         "They store elements in non-contiguous memory",
         "They cannot store numbers"
       ],
-      "correct": 0
+      "correct": 0,
+      "explanation": "Fast random access using an index is the biggest advantage of arrays (O(1) access time)."
     },
     {
       "question": "Which of the following is NOT an advantage of arrays?",
@@ -118,7 +124,8 @@
         "Dynamic resizing in all languages",
         "Easy traversal"
       ],
-      "correct": 2
+      "correct": 2,
+      "explanation": "Static arrays cannot dynamically resize in most languages (like C/Java). Dynamic resizing is only available in array-lists."
     },
     {
       "question": "Static arrays are limited because:",
@@ -128,10 +135,9 @@
         "They have fixed size",
         "They cannot store strings"
       ],
-      "correct": 2
+      "correct": 2,
+      "explanation": "Static arrays have a fixed size determined at creation time. They cannot grow or shrink dynamically."
     }
-
-    
   ],
   "codingChallenge": {
     "title": "Implement Linear Search",
