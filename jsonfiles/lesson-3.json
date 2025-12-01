@@ -3,64 +3,150 @@
   "title": "Arrays",
   "difficulty": "easy",
   "category": "linear",
-  "duration": "25 min",
-  "rewardXP": 20,
+  "duration": "30 min",
+  "rewardXP": 25,
   "badge": "Array Apprentice 🔢",
-
-  "keywords": ["arrays", "indexing", "iteration", "python arrays", "lists"],
-
-  "videoScript": "Welcome back to Programmer’s Picnic! Today’s lesson is all about Arrays — one of the most fundamental building blocks in Data Structures.\n\nBy the end of this video, you'll understand what arrays are, why they exist, how indexing works, and how to store and access data efficiently.\n\nLet’s begin!\n\n1. What is an Array?\nAn array is a collection of elements stored in a **contiguous block of memory**.\n\n2. Why Arrays?\nFast access using indexing — O(1) time.\n\n3. Real-life Analogy:\nThink of an array like a row of identical boxes placed side-by-side. Each box has an address (index), and you can quickly jump to any box.\n\n4. Python Reminder:\nIn Python, arrays are implemented as **lists**, which are more flexible than low-level arrays.\n\nLet’s explore arrays in action!",
-
-  "blogArticle": "## Lesson 3: Arrays\n\nArrays are one of the simplest and most widely used data structures.\nThey allow us to store multiple values under a single name and access them using their position (index).\n\n---\n### 🔹 What is an Array?\nAn **array** is a collection of items stored at **contiguous memory locations**.\n- Fast access → O(1)\n- Fixed-size in low-level languages\n- Python lists behave like dynamic arrays\n\n---\n### 🔹 How Indexing Works\nIndexes start at **0**.\n\nExample:\n```\narr = [10, 20, 30, 40]\nprint(arr[2])  # Output: 30\n```\n\n---\n### 🔹 Array Traversal\nVisit every element one-by-one:\n```\nfor x in arr:\n    print(x)\n```\nTime complexity: **O(n)**\n\n---\n### 🔹 Applications of Arrays\n- Storing sequences (marks, prices, temperatures)\n- Implementing higher-level DS (stacks, queues, heaps)\n- Efficient mathematical & statistical computing\n\nArrays are the gateway to linear data structures. Master them well! 🚀",
-
+  "keywords": [
+    "arrays",
+    "indexing",
+    "iteration",
+    "python lists",
+    "memory"
+  ],
+  "videoScript": "Welcome to Lesson 3 of Programmer’s Picnic! Today we explore Arrays — the most fundamental linear data structure.\n\nWe'll learn what arrays are, why they matter, how they’re stored in memory, how to access elements, how to traverse them, and how they compare to other data structures.\n\nBy the end of this lesson, you’ll be comfortable creating arrays, reading and updating elements, performing operations like traversal and searching, and understanding how arrays behave in different programming languages.\n\nLet’s begin!",
+  "blogArticle": "## Lesson 3: Arrays\n\nArrays are the simplest and most widely used data structure in programming.\n\n---\n### 🔹 What Is an Array?\nAn **array** is a collection of elements stored at **contiguous memory locations**. Every element can be accessed using its **index**.\n\n---\n### 🔹 Characteristics of Arrays\n- Fixed size (in low-level languages)\n- Homogeneous data (C, Java), flexible in Python\n- Indexed elements\n\n---\n### 🔹 Syntax Examples (C, Java, Python)\n**C:**\n```\nint arr[5] = {1, 2, 3, 4, 5};\n```\n**Java:**\n```\nint[] arr = {1, 2, 3, 4, 5};\n```\n**Python:**\n```\narr = [1, 2, 3, 4, 5]\n```\n\n---\n### 🔹 Accessing Elements\n```\narr[0]  # first element\narr[3]  # fourth element\n```\nIndexing is usually **0-based**.\n\n---\n### 🔹 Array Operations\n- Traversal\n- Searching\n- Insertion & deletion (costly in fixed arrays)\n- Sorting basics\n\n---\n### 🔹 Memory Representation\nArrays occupy one continuous block of memory. This enables O(1) element access.\n\n---\n### 🔹 Multidimensional Arrays\n2D arrays represent grids/matrices.\n```\nmatrix = [[1,2],[3,4]]\n```\n\n---\n### 🔹 Applications\n- Storing sequential data\n- Used inside stacks, queues, heaps\n- Used in searching, sorting algorithms\n\n---\n### 🔹 Advantages & Limitations\n**Advantages:**\n- Fast access → O(1)\n\n**Limitations:**\n- Fixed size (in static arrays)\n- Costly insert/delete\n\n---\n### 🔹 Summary\nArrays are essential. Up next — dynamic structures like linked lists!",
   "practiceProblems": [
-    "Explain arrays in your own words with a real-life analogy.",
-    "What is the time complexity of accessing an element by index?",
-    "Write Python code to print the maximum element in an array."
+    "Explain what makes arrays efficient for random access.",
+    "Write Python code to find the smallest number in an array.",
+    "What is the difference between arr[i] and arr[i-1]?"
   ],
-
   "homework": [
-    "Create an array of 10 numbers and print only the even ones.",
-    "Reverse an array *without* using built-in functions.",
-    "Count how many times a given number appears in an array."
+    "Create an array of 10 elements and print them in reverse order using a loop.",
+    "Write a Python function to insert an element at a given index (without using insert()).",
+    "Write a program to count how many elements in an array are greater than the average.",
+    "Create a 3x3 matrix and print the sum of each row.",
+    "Search for a target element in an array and print its index (or -1)."
   ],
-
   "quiz": [
     {
-      "question": "What is the time complexity of accessing arr[i] in an array?",
-      "options": ["O(n)", "O(log n)", "O(1)", "O(n log n)"],
+      "question": "Which statement is TRUE about arrays?",
+      "options": [
+        "They store elements randomly in memory",
+        "They use contiguous memory",
+        "Indexing is always 1-based",
+        "Insertion is O(1) always"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Accessing arr[i] is generally:",
+      "options": [
+        "O(n)",
+        "O(log n)",
+        "O(1)",
+        "O(n log n)"
+      ],
       "correct": 2
     },
     {
-      "question": "What is the first index of an array?",
-      "options": ["0", "1", "-1", "Depends on language"],
+      "question": "Which language stores arrays as fixed-size and homogeneous?",
+      "options": [
+        "Python",
+        "JavaScript",
+        "C",
+        "Ruby"
+      ],
+      "correct": 2
+    },
+    {
+      "question": "What is the index of the first element in most languages?",
+      "options": [
+        "0",
+        "1",
+        "-1",
+        "Depends on array length"
+      ],
       "correct": 0
     },
     {
-      "question": "Which of the following is TRUE?",
+      "question": "Insertion in the middle of an array is:",
       "options": [
-        "Arrays store elements in random memory locations",
-        "Array traversal takes O(1) time",
-        "Arrays allow O(1) access using index",
-        "Python does not support array-like structures"
+        "Cheap",
+        "O(1)",
+        "Expensive because elements must shift",
+        "Not allowed in any language"
+      ],
+      "correct": 2
+    },
+    {
+      "question": "Which is an example of a 2D array?",
+      "options": [
+        "[1,2,3]",
+        "[[1,2],[3,4]]",
+        "1 -> 2 -> 3",
+        "[1, [2,3,4]]"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Traversal of an array is:",
+      "options": [
+        "O(n)",
+        "O(1)",
+        "O(log n)",
+        "Undefined"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Arrays are useful because:",
+      "options": [
+        "They allow fast indexing",
+        "They resize automatically in C",
+        "They store elements in non-contiguous memory",
+        "They cannot store numbers"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Which of the following is NOT an advantage of arrays?",
+      "options": [
+        "Fast access",
+        "Predictable memory usage",
+        "Dynamic resizing in all languages",
+        "Easy traversal"
+      ],
+      "correct": 2
+    },
+    {
+      "question": "Static arrays are limited because:",
+      "options": [
+        "They are slow",
+        "They use too much memory",
+        "They have fixed size",
+        "They cannot store strings"
       ],
       "correct": 2
     }
   ],
-
   "codingChallenge": {
-    "title": "Find the Sum of an Array",
-    "instructions": "# Given an array arr, print the sum of all its elements.\narr = [5, 10, 15, 20]\n# Write your code below:",
-    "solution": "arr = [5, 10, 15, 20]\nprint(sum(arr))"
+    "title": "Implement Linear Search",
+    "instructions": "# Given arr and target, print the index of target.\n# If not found, print -1.\narr = [4, 1, 9, 7, 3]\ntarget = 7\n# Write your code below:",
+    "solution": "arr = [4, 1, 9, 7, 3]\ntarget = 7\nidx = -1\nfor i in range(len(arr)):\n    if arr[i] == target:\n        idx = i\n        break\nprint(idx)"
   },
-
   "slidesSVG": [
-    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#ffe7b3'/><text x='50%' y='50%' text-anchor='middle' fill='#8c3f00' font-size='28' font-family='system-ui'>Arrays — Linear Data Structure 🔢</text></svg>",
-    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#fff3d1'/><text x='50%' y='45%' text-anchor='middle' fill='#a14c00' font-size='22'>Contiguous Memory • Fast Indexing (O(1))</text></svg>",
-    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#ffefc8'/><text x='50%' y='50%' text-anchor='middle' fill='#b35a00' font-size='20'>Python Lists = Dynamic Arrays 🚀</text></svg>"
+    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#fde7b0'/><text x='50%' y='45%' text-anchor='middle' font-size='26' fill='#8c3f00'>1. Introduction to Arrays</text><text x='50%' y='70%' text-anchor='middle' font-size='16' fill='#5a2f00'>What arrays are • Why they’re useful</text></svg>",
+    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#fff1cf'/><text x='50%' y='40%' text-anchor='middle' font-size='24' fill='#a14c00'>2. Array Characteristics</text><text x='50%' y='65%' text-anchor='middle' font-size='16'>Fixed Size • Homogeneous • Indexed</text></svg>",
+    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#ffe7b3'/><text x='50%' y='40%' text-anchor='middle' font-size='24' fill='#b35a00'>3. Array Syntax</text><text x='50%' y='65%' text-anchor='middle' font-size='14'>C • Java • Python examples</text></svg>",
+    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#ffefcd'/><text x='50%' y='40%' text-anchor='middle' font-size='24' fill='#8c3f00'>4. Accessing Elements</text><text x='50%' y='65%' text-anchor='middle' font-size='16'>Indexing • Retrieval • Update</text></svg>",
+    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#fce7a8'/><text x='50%' y='38%' text-anchor='middle' font-size='23' fill='#a14c00'>5. Array Operations</text><text x='50%' y='65%' text-anchor='middle' font-size='15'>Traversal • Insertion • Deletion • Search • Sort</text></svg>",
+    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#ffe7ba'/><text x='50%' y='40%' text-anchor='middle' font-size='24' fill='#b35a00'>6. Memory Representation</text><text x='50%' y='67%' text-anchor='middle' font-size='15'>Contiguous Memory • Fast Access • Limits</text></svg>",
+    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#fff3d1'/><text x='50%' y='40%' text-anchor='middle' font-size='23' fill='#8c3f00'>7. Multidimensional Arrays</text><text x='50%' y='70%' text-anchor='middle' font-size='14'>2D Arrays • Matrices • Tables</text></svg>",
+    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#ffeec4'/><text x='50%' y='40%' text-anchor='middle' font-size='23' fill='#a14c00'>8. Applications of Arrays</text><text x='50%' y='70%' text-anchor='middle' font-size='15'>Lists • Stacks • Queues • Algorithms</text></svg>",
+    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#fceabb'/><text x='50%' y='40%' text-anchor='middle' font-size='23' fill='#b35a00'>9. Advantages vs Limitations</text><text x='50%' y='70%' text-anchor='middle' font-size='15'>Fast Access • Fixed Size • Comparisons</text></svg>",
+    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#fff5d8'/><text x='50%' y='40%' text-anchor='middle' font-size='24' fill='#8c3f00'>10. Summary & Takeaways</text><text x='50%' y='70%' text-anchor='middle' font-size='15'>Arrays → Gateway to Linked Lists & Dynamic Structures</text></svg>"
   ],
-
   "codeExamples": [
-    "# Example 1: Creating an array\narr = [10, 20, 30, 40]\nprint(arr)\n\n# Example 2: Access element\nprint(arr[1])  # Output: 20\n\n# Example 3: Traversal\nfor x in arr:\n    print(x)"
+    "# Basic traversal\narr = [10, 20, 30, 40]\nfor x in arr:\n    print(x)\n\n# Access and update\narr[1] = 50\nprint(arr)\n\n# 2D array example\nmatrix = [[1,2],[3,4]]\nprint(matrix[1][0])"
   ]
 }
