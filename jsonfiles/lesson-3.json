@@ -13,6 +13,58 @@
     "python lists",
     "memory"
   ],
+  "youtubeVideos": [
+    {
+      "videoId": "_hasaKTG3vw",
+      "title": "Lesson 3: Starting Arrays – Part 1",
+      "description": "Learn what arrays are, how indexing works, and how to store multiple values efficiently.",
+      "tags": [
+        "arrays for beginners",
+        "starting arrays tutorial",
+        "array lesson for beginners",
+        "programmer's picnic arrays",
+        "python arrays",
+        "java arrays",
+        "array indexing explained",
+        "basic data structures tutorial",
+        "learn programming step by step",
+        "python beginner lessons",
+        "java beginner lessons",
+        "coding for beginners india",
+        "varanasi programming classes",
+        "champak roy programming sutras",
+        "learnwithchampak"
+      ],
+      "chapters": [
+        {
+          "time": "00:00",
+          "title": "Introduction"
+        },
+        {
+          "time": "00:26",
+          "title": "What Are Arrays?"
+        },
+        {
+          "time": "03:20",
+          "title": "Arrays in Python"
+        },
+        {
+          "time": "04:55",
+          "title": "Arrays in Java"
+        }
+      ],
+      "shorts": [
+        {
+          "id": "SHORTS_1",
+          "title": "Arrays in 30 Seconds"
+        },
+        {
+          "id": "SHORTS_2",
+          "title": "What Is Index 0?"
+        }
+      ]
+    }
+  ],
   "videoScript": "Welcome to Lesson 3 of Programmer’s Picnic! Today we explore Arrays — the most fundamental linear data structure.\n\nWe'll learn what arrays are, why they matter, how they’re stored in memory, how to access elements, how to traverse them, and how they compare to other data structures.\n\nLet’s begin!",
   "blogArticle": "## Lesson 3: Arrays\n\nArrays are the simplest and most widely used data structure in programming.\n\n---\n### 🔹 What Is an Array?\nAn **array** is a collection of elements stored at **contiguous memory locations**. Every element can be accessed using its **index**.\n\n---\n### 🔹 Characteristics of Arrays\n- Fixed size (in low-level languages)\n- Homogeneous data (C, Java), flexible in Python\n- Indexed elements\n\n---\n### 🔹 Syntax Examples (C, Java, Python)\n**C:**\n```\nint arr[5] = {1, 2, 3, 4, 5};\n```\n**Java:**\n```\nint[] arr = {1, 2, 3, 4, 5};\n```\n**Python:**\n```\narr = [1, 2, 3, 4, 5]\n```\n\n---\n### 🔹 Accessing Elements\n```\narr[0]  # first element\narr[3]  # fourth element\n```\nIndexing is usually **0-based**.\n\n---\n### 🔹 Array Operations\n- Traversal\n- Searching\n- Insertion & deletion (costly in fixed arrays)\n- Sorting basics\n\n---\n### 🔹 Memory Representation\nArrays occupy one continuous block of memory. This enables O(1) element access.\n\n---\n### 🔹 Multidimensional Arrays\n2D arrays represent grids/matrices.\n```\nmatrix = [[1,2],[3,4]]\n```\n\n---\n### 🔹 Applications\n- Storing sequential data\n- Used inside stacks, queues, heaps\n- Used in searching, sorting algorithms\n\n---\n### 🔹 Advantages & Limitations\n**Advantages:**\n- Fast access → O(1)\n\n**Limitations:**\n- Fixed size (in static arrays)\n- Costly insert/delete\n\n---\n### 🔹 Summary\nArrays are essential. Up next — dynamic structures like linked lists!",
   "practiceProblems": [
