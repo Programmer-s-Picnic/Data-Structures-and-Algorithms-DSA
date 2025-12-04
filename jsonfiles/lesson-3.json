@@ -36,32 +36,10 @@
         "learnwithchampak"
       ],
       "chapters": [
-        {
-          "time": "00:00",
-          "title": "Introduction"
-        },
-        {
-          "time": "00:26",
-          "title": "What Are Arrays?"
-        },
-        {
-          "time": "03:20",
-          "title": "Arrays in Python"
-        },
-        {
-          "time": "04:55",
-          "title": "Arrays in Java"
-        }
+        
       ],
       "shorts": [
-        {
-          "id": "SHORTS_1",
-          "title": "Arrays in 30 Seconds"
-        },
-        {
-          "id": "SHORTS_2",
-          "title": "What Is Index 0?"
-        }
+        
       ]
     }
   ],
