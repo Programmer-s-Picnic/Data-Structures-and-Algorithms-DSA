@@ -54,44 +54,79 @@
     "Apply binary search to find the square root of a number (integer approximation)."
   ],
 
-  "quiz": [
-    {
-      "question": "Binary Search works only on:",
-      "options": ["Unsorted lists", "Sorted lists", "Linked lists", "Hash tables"],
-      "correct": 1,
-      "explanation": "Binary search requires the data to be sorted to eliminate half the search space logically."
-    },
-    {
-      "question": "Time complexity of Binary Search is:",
-      "options": ["O(n)", "O(log n)", "O(n log n)", "O(1)"],
-      "correct": 1,
-      "explanation": "Binary Search cuts the array into half each time, leading to a logarithmic time complexity."
-    },
-    {
-      "question": "What does mid represent in binary search?",
-      "options": [
-        "The index of the center element",
-        "The last element",
-        "The smallest element",
-        "The target element"
-      ],
-      "correct": 0,
-      "explanation": "mid is computed using (low + high) // 2 and represents the center index of the search range."
-    },
-    {
-      "question": "If target < arr[mid], which half do we search?",
-      "options": ["Right half", "Left half", "Both halves", "Stop searching"],
-      "correct": 1,
-      "explanation": "If the target is smaller, it must be in the left segment."
-    },
-    {
-      "question": "Binary Search worst-case steps for 1024 elements?",
-      "options": ["1024", "512", "20", "10"],
-      "correct": 3,
-      "explanation": "log₂(1024) = 10 steps."
-    }
-  ],
-
+"quiz": [
+  {
+    "question": "Binary Search works only when the data is:",
+    "options": ["Sorted", "Unsorted", "Partially sorted", "Reverse sorted"],
+    "correct": 0,
+    "explanation": "Binary search requires sorted order to logically eliminate half the search range."
+  },
+  {
+    "question": "What is the time complexity of Binary Search?",
+    "options": ["O(n)", "O(log n)", "O(n log n)", "O(1)"],
+    "correct": 1,
+    "explanation": "Binary Search halves the interval each step, leading to logarithmic time."
+  },
+  {
+    "question": "In binary search, the mid index is calculated as:",
+    "options": ["(low + high) / 2", "(low + high) // 2", "low * high / 2", "None"],
+    "correct": 1,
+    "explanation": "Integer division must be used to prevent floating values."
+  },
+  {
+    "question": "If target < arr[mid], which part is searched next?",
+    "options": ["Right half", "Left half", "Middle only", "Binary search ends"],
+    "correct": 1,
+    "explanation": "If the target is smaller, we search the left side of the mid index."
+  },
+  {
+    "question": "Binary Search worst-case comparisons for n elements?",
+    "options": ["n", "n/2", "log2(n)", "n log n"],
+    "correct": 2,
+    "explanation": "Worst-case comparisons are logarithmic, as range halves every step."
+  },
+  {
+    "question": "Binary Search returns -1 when:",
+    "options": [
+      "Array has duplicates",
+      "Target is larger than mid",
+      "Target is not in the array",
+      "Array length is odd"
+    ],
+    "correct": 2,
+    "explanation": "Returning -1 is the standard approach when search fails."
+  },
+  {
+    "question": "Which error commonly occurs in Binary Search?",
+    "options": [
+      "Integer overflow in mid calculation",
+      "Divide-by-zero error",
+      "Stack overflow",
+      "Floating point rounding"
+    ],
+    "correct": 0,
+    "explanation": "In low-level languages (C/C++/Java), (low+high) may overflow; Python does not overflow."
+  },
+  {
+    "question": "Binary Search can be applied to:",
+    "options": ["Queues", "Unsorted arrays", "Sorted arrays", "Hash tables"],
+    "correct": 2,
+    "explanation": "The array must be sorted before applying binary search."
+  },
+  {
+    "question": "Which version of binary search uses additional stack space?",
+    "options": ["Iterative", "Recursive", "Both", "Neither"],
+    "correct": 1,
+    "explanation": "Recursive implementation uses call stack frames."
+  },
+  {
+    "question": "If array size is 2048, maximum binary search steps are:",
+    "options": ["11", "12", "22", "2048"],
+    "correct": 1,
+    "explanation": "log₂(2048) = 11, but worst-case steps = 12 (floor+1 rounding)."
+  }
+]
+,
   "codingChallenge": {
     "title": "Implement Binary Search",
     "instructions": "# Given a sorted array and a target, return the index or -1.\narr = [1,3,5,7,9]\ntarget = 7",
