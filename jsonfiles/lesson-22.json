@@ -1,0 +1,126 @@
+{
+  "id": 22,
+  "title": "Binary Search",
+  "difficulty": "easy",
+  "category": "algorithms",
+  "duration": "35 min",
+  "rewardXP": 30,
+  "badge": "Binary Seeker 🧭",
+  "keywords": ["binary search", "searching", "divide and conquer", "algorithm basics", "python binary search"],
+
+  "youtubeVideos": [
+    {
+      "videoId": "BINARY12345",
+      "title": "Lesson 22: Binary Search Explained Clearly",
+      "description": "Understand binary search visually with arrays, mid calculation, and edge-case handling. Includes Python, Java, and real-life analogies.",
+      "tags": [
+        "binary search tutorial",
+        "algorithm basics",
+        "python binary search",
+        "binary search explained",
+        "programmer's picnic binary search",
+        "coding for beginners india",
+        "varanasi programming classes"
+      ],
+      "chapters": [
+        { "time": "00:00", "title": "What is Binary Search?" },
+        { "time": "01:40", "title": "Why Linear Search is Slow" },
+        { "time": "03:00", "title": "Visualizing Mid Calculation" },
+        { "time": "05:38", "title": "Binary Search Implementation in Python" },
+        { "time": "07:15", "title": "Common Mistakes & Off-by-One Errors" },
+        { "time": "09:50", "title": "Real-life Use Cases" }
+      ],
+      "shorts": [
+        { "id": "SHORTS-BS-01", "title": "Binary Search in 30 seconds" },
+        { "id": "SHORTS-BS-02", "title": "Why binary search fails sometimes" }
+      ]
+    }
+  ],
+
+  "videoScript": "Welcome to Programmer’s Picnic — Lesson 22: Binary Search! Today, we explore one of the simplest yet most powerful algorithms in computer science.\n\nBinary Search works on sorted arrays and repeatedly cuts the search interval in half. Each step eliminates 50% of remaining elements, making the algorithm extremely efficient.\n\nWe will walk through visual examples, Python code, common pitfalls, and real-world scenarios.\nLet's begin!",
+
+  "blogArticle": "## Lesson 22: Binary Search\n\nBinary Search is a **divide-and-conquer** algorithm used to search for an element in a **sorted array**.\n\n---\n### 🔹 Why Binary Search?\nLinear Search → checks every element → **O(n)**\nBinary Search → halves the search each time → **O(log n)**\n\n---\n### 🔹 How It Works\n1. Start with `low = 0`, `high = n−1`.\n2. Compute `mid = (low + high) // 2`.\n3. Compare `arr[mid]` with `target`.\n4. If equal → found.\n5. If target < arr[mid] → search left half.\n6. Else → search right half.\n\n---\n### 🔹 Python Example\n```python\narr = [1, 3, 5, 7, 9]\ntarget = 7\nlow, high = 0, len(arr)-1\n\nwhile low <= high:\n    mid = (low + high) // 2\n    if arr[mid] == target:\n        print(\"Found at index\", mid)\n        break\n    elif target < arr[mid]:\n        high = mid - 1\n    else:\n        low = mid + 1\n```\n\n---\n### 🔹 Time Complexity\n- **Best:** O(1)\n- **Worst:** O(log n)\n- **Space:** O(1)\n\n---\n### 🔹 Real-Life Applications\n- Searching names in a phonebook\n- Guess-the-number games\n- Database indexing\n- Competitive programming\n\nBinary Search is a must-have tool in your algorithmic toolkit!",
+
+  "practiceProblems": [
+    "Manually simulate binary search for target = 8 in the array [2,4,6,8,10,12]. Show low, mid, high at every step.",
+    "What happens if the array is not sorted? Explain why binary search fails.",
+    "Write the binary search algorithm in your own words."
+  ],
+
+  "homework": [
+    "Write an iterative binary search function in Python.",
+    "Write a recursive version of binary search.",
+    "Modify binary search to return the first occurrence of an element in a sorted array with duplicates.",
+    "Apply binary search to find the square root of a number (integer approximation)."
+  ],
+
+  "quiz": [
+    {
+      "question": "Binary Search works only on:",
+      "options": ["Unsorted lists", "Sorted lists", "Linked lists", "Hash tables"],
+      "correct": 1,
+      "explanation": "Binary search requires the data to be sorted to eliminate half the search space logically."
+    },
+    {
+      "question": "Time complexity of Binary Search is:",
+      "options": ["O(n)", "O(log n)", "O(n log n)", "O(1)"],
+      "correct": 1,
+      "explanation": "Binary Search cuts the array into half each time, leading to a logarithmic time complexity."
+    },
+    {
+      "question": "What does mid represent in binary search?",
+      "options": [
+        "The index of the center element",
+        "The last element",
+        "The smallest element",
+        "The target element"
+      ],
+      "correct": 0,
+      "explanation": "mid is computed using (low + high) // 2 and represents the center index of the search range."
+    },
+    {
+      "question": "If target < arr[mid], which half do we search?",
+      "options": ["Right half", "Left half", "Both halves", "Stop searching"],
+      "correct": 1,
+      "explanation": "If the target is smaller, it must be in the left segment."
+    },
+    {
+      "question": "Binary Search worst-case steps for 1024 elements?",
+      "options": ["1024", "512", "20", "10"],
+      "correct": 3,
+      "explanation": "log₂(1024) = 10 steps."
+    }
+  ],
+
+  "codingChallenge": {
+    "title": "Implement Binary Search",
+    "instructions": "# Given a sorted array and a target, return the index or -1.\narr = [1,3,5,7,9]\ntarget = 7",
+    "solution": "def binary_search(arr, target):\n    low, high = 0, len(arr)-1\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif target < arr[mid]:\n            high = mid - 1\n        else:\n            low = mid + 1\n    return -1\n\narr = [1,3,5,7,9]\nprint(binary_search(arr, 7))"
+  },
+
+  "slidesSVG": [
+    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#ffe9b3'/><text x='50%' y='45%' text-anchor='middle' font-size='26' fill='#6b3a00' font-family='system-ui'>Binary Search: Divide & Conquer</text></svg>",
+    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#fff3d1'/><text x='50%' y='30%' text-anchor='middle' font-size='22' fill='#8c3f00'>Key Rule: Array Must Be Sorted</text><text x='50%' y='70%' text-anchor='middle' font-size='16' fill='#3a2a1a'>Otherwise, the halving logic fails</text></svg>",
+    "<svg viewBox='0 0 600 240'><rect width='600' height='240' fill='#ffe7b5'/><text x='50%' y='30%' text-anchor='middle' font-size='22' fill='#b35a00'>Binary Search Steps</text><text x='50%' y='70%' text-anchor='middle' font-size='16' fill='#3a2a1a'>low, mid, high → compare → halve → repeat</text></svg>",
+    "<svg viewBox='0 0 600 240'><rect width='600' height='240' fill='#fff0c9'/><text x='50%' y='40%' text-anchor='middle' font-size='20' fill='#6b3a00'>Time: O(log n)</text><text x='50%' y='80%' text-anchor='middle' font-size='16' fill='#8c3f00'>Very fast for large data</text></svg>",
+    "<svg viewBox='0 0 600 200'><rect width='600' height='200' fill='#ffe3a1'/><text x='50%' y='50%' text-anchor='middle' font-size='22' fill='#8c3f00'>Binary Search Summary</text></svg>"
+  ],
+
+  "slideCodes": [
+    [
+      "arr = [1,3,5,7,9]\nprint(arr)"
+    ],
+    [
+      "low, high = 0, len(arr)-1\nmid = (low + high)//2\nprint(mid)"
+    ],
+    [
+      "if target < arr[mid]:\n    high = mid - 1"
+    ],
+    [
+      "# O(log n) behaviour\nprint('log2(1024) =', 1024.bit_length()-1)"
+    ],
+    [
+      "def bs(arr, target):\n    low, high = 0, len(arr)-1\n    while low <= high:\n        mid = (low + high)//2\n        if arr[mid] == target: return mid\n        elif target < arr[mid]: high = mid-1\n        else: low = mid+1\n    return -1"
+    ]
+  ]
+}
