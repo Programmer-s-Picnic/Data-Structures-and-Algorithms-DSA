@@ -66,7 +66,7 @@
     }
   ],
   "videoScript": "Welcome to Programmer’s Picnic — Lesson 22: Binary Search! Today, we explore one of the simplest yet most powerful algorithms in computer science.\n\nBinary Search works on sorted arrays and repeatedly cuts the search interval in half. Each step eliminates 50% of remaining elements, making the algorithm extremely efficient.\n\nWe will walk through visual examples, Python code, common pitfalls, and real-world scenarios.\nLet's begin!",
-  "blogArticle": "## Lesson 22: Binary Search\n\nBinary Search is a **divide-and-conquer** algorithm used to search for an element in a **sorted array**.\n\n---\n### 🔹 Why Binary Search?\nLinear Search → checks every element → **O(n)**\nBinary Search → halves the search each time → **O(log n)**\n\n---\n### 🔹 How It Works\n1. Start with `left = 0`, `high = n−1`.\n2. Compute `mid = (left +  right) // 2`.\n3. Compare `arr[mid]` with `target`.\n4. If equal → found.\n5. If target < arr[mid] → search left half.\n6. Else → search right half.\n\n---\n### 🔹 Python Example\n```python\narr = [1, 3, 5, 7, 9]\ntarget = 7\nleft,  right = 0, len(arr)-1\n\nwhile left <=  right:\n    mid = (left +  right) // 2\n    if arr[mid] == target:\n        print(\"Found at index\", mid)\n        break\n    elif target < arr[mid]:\n         right = mid - 1\n    else:\n        left = mid + 1\n```\n\n---\n### 🔹 Time Complexity\n- **Best:** O(1)\n- **Worst:** O(log n)\n- **Space:** O(1)\n\n---\n### 🔹 Real-Life Applications\n- Searching names in a phonebook\n- Guess-the-number games\n- Database indexing\n- Competitive programming\n\nBinary Search is a must-have tool in your algorithmic toolkit!",
+  "blogArticle": "## Lesson 22: Binary Search\n\nBinary Search is a **divide-and-conquer** algorithm used to search for an element in a **sorted array**.\n\n---\n### 🔹 Why Binary Search?\nLinear Search → checks every element → **O(n)**\nBinary Search → halves the search each time → **O(log n)**\n\n---\n### 🔹 How It Works\n1. Start with `left = 0`, `right = n−1`.\n2. Compute `mid = (left +  right) // 2`.\n3. Compare `arr[mid]` with `target`.\n4. If equal → found.\n5. If target < arr[mid] → search left half.\n6. Else → search right half.\n\n---\n### 🔹 Python Example\n```python\narr = [1, 3, 5, 7, 9]\ntarget = 7\nleft,  right = 0, len(arr)-1\n\nwhile left <=  right:\n    mid = (left +  right) // 2\n    if arr[mid] == target:\n        print(\"Found at index\", mid)\n        break\n    elif target < arr[mid]:\n         right = mid - 1\n    else:\n        left = mid + 1\n```\n\n---\n### 🔹 Time Complexity\n- **Best:** O(1)\n- **Worst:** O(log n)\n- **Space:** O(1)\n\n---\n### 🔹 Real-Life Applications\n- Searching names in a phonebook\n- Guess-the-number games\n- Database indexing\n- Competitive programming\n\nBinary Search is a must-have tool in your algorithmic toolkit!",
   "practiceProblems": [
     "Manually simulate binary search for target = 8 in the array [2,4,6,8,10,12]. Show left, mid,  right at every step.",
     "What happens if the array is not sorted? Explain why binary search fails.",
@@ -154,7 +154,7 @@
         "Floating point rounding"
       ],
       "correct": 0,
-      "explanation": "In left-level languages (C/C++/Java), (left+high) may overflow; Python does not overflow."
+      "explanation": "In left-level languages (C/C++/Java), (left+right) may overflow; Python does not overflow."
     },
     {
       "question": "Binary Search can be applied to:",
